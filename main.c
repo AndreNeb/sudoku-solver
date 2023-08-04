@@ -1,18 +1,16 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-void testIfPossible(int [], int[], int);
+bool testIfPossible(int, int, int, int[][9]);
 
 void drawSudoku(int [][9]);
 
-void solve();
+void solve(int [][9]);
 
 
 void ownSudoku(int [][9]);
 
 void givenSudoku();
-
-void help();
 
 int main() {
 
@@ -49,20 +47,58 @@ void ownSudoku(int sudoku[][9]) {
             sudoku[i][j] = inputNumber;
         }
     }
-    //solve(sudoku);
-    drawSudoku(sudoku);
+    solve(sudoku);
 }
 
-void drawSudoku(int sudoku[][9]) {
-
+bool testIfPossible(int row, int column, int numberToTest, int sudoku[][9]) {
     for (int i = 0; i < 9; i++) {
-        for (int j = 0; j < 9; j++) {
-            sudoku[i][j] = 0;
+        if (sudoku[row][i] == numberToTest) {
+            return false;
         }
     }
 
+    for (int i = 0; i < 9; i++) {
+        if (sudoku[i][column] == numberToTest) {
+            return false;
+        }
+    }
 
-    printf("\n   —   —   —   —   —   —   —   \n");
+    int squareRow = row / 3 * 3;
+    int squareColumn = column / 3 * 3;
+
+    for (int i = squareRow; i < squareRow + 3; i++) {
+        for (int j = squareColumn; j < squareColumn + 3; j++) {
+            if (sudoku[i][j] == numberToTest) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+
+void solve(int sudoku[][9]) {
+    for (int row = 0; row < 9; row++) {
+        for (int column = 0; column < 9; column++) {
+            if (sudoku[row][column] == 0) {
+                for (int numberToTest = 1; numberToTest < 10; numberToTest++) {
+                    if (testIfPossible(row, column, numberToTest, sudoku)) {
+                        sudoku[row][column] = numberToTest;
+                        solve(sudoku);
+                        sudoku[row][column] = 0;
+                    }
+
+                }
+                return;
+            }
+        }
+    }
+    drawSudoku(sudoku);
+}
+
+
+void drawSudoku(int sudoku[][9]) {
+    printf("\n   —  —  —  —  —  —  —  —  —  \n");
     for (int i = 0; i < 9; i++) {
         for (int j = 0; j < 9; j++) {
             if (j == 0) {
@@ -75,8 +111,7 @@ void drawSudoku(int sudoku[][9]) {
             }
             printf(" %d ", sudoku[i][j]);
         }
-        printf("\n   —   —   —   —   —   —   —   \n");
+        printf("\n   —  —  —  —  —  —  —  —  —  \n");
     }
 }
-
 
