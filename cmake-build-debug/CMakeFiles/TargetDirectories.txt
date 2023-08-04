@@ -1,0 +1,3 @@
+/Users/andrenebauer/Documents/Privata/Programmieren/C:C++/sudoku-solver/cmake-build-debug/CMakeFiles/sudoku_solver.dir
+/Users/andrenebauer/Documents/Privata/Programmieren/C:C++/sudoku-solver/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/andrenebauer/Documents/Privata/Programmieren/C:C++/sudoku-solver/cmake-build-debug/CMakeFiles/rebuild_cache.dir
