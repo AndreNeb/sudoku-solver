@@ -2,44 +2,21 @@
 #include <stdbool.h>
 
 bool testIfPossible(int, int, int, int[][9]);
-
 void drawSudoku(int [][9]);
-
 void solve(int [][9]);
-
-
 void ownSudoku(int [][9]);
-
-void givenSudoku();
 
 int main() {
 
     int sudoku[9][9];
-    char input;
 
-    printf("What action would you like to take?\n");
-    printf("(A) Enter your own sudoku and have it solved\n");
-    printf("(B) Play a given Sudoku\n");
-    scanf("%c", &input);
-
-
-    switch (input) {
-        case 'A':
-            ownSudoku(sudoku);
-            break;
-        case 'B':
-            //givenSudoku();
-            break;
-        default:
-            printf("Give a valid input!");
-    }
-
+    printf("Enter your own sudoku and have it solved:\n");
+    ownSudoku(sudoku);
     return 0;
 }
 
 void ownSudoku(int sudoku[][9]) {
     int inputNumber;
-    drawSudoku(sudoku);
     for (int i = 0; i < 9; i++) {
         for (int j = 0; j < 9; j++) {
             printf("Give a value for the following position: %d %d\n", i, j);
