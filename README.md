@@ -6,7 +6,7 @@ This is a C program that allows you to input your own Sudoku puzzle and have it 
 
 To use this program, you need a C compiler installed on your computer.
 
-1. Clone the repository or download the `sudoku-solver.c` file.
+1. Clone the repository or download the `sudoku-solver.c` repo.
 
 ```bash
 git clone https://github.com/your-username/sudoku-solver.git
