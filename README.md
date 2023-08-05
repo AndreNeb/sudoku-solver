@@ -12,7 +12,7 @@ To use this program, you need a C compiler installed on your computer.
 
 3. Run the executable.
 
-## How to Use
+## How to use
 
 1. When you run the program, you will be prompted to enter the values for each cell of the Sudoku puzzle.
 
