@@ -8,21 +8,9 @@ To use this program, you need a C compiler installed on your computer.
 
 1. Clone the repository.
 
-```bash
-git clone https://github.com/your-username/sudoku-solver.git
-```
-
 2. Compile the C program using your preferred C compiler.
 
-```bash
-gcc sudoku_solver.c -o sudoku_solver
-```
-
 3. Run the executable.
-
-```bash
-./sudoku_solver
-```
 
 ## How to Use
 
